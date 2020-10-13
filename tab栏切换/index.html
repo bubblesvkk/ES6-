@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 面向对象 动态添加标签页</title>
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h4{
+            width: 150px;
+            height: 35px;
+            margin: 45px auto 0;
+        }
+        .tabsbox{
+            width: 600px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 0px auto 0;
+        }
+        .firstnav{
+            width: 100%;
+            height: 35px;
+            /*border: 1px solid red;*/
+        }
+        .firstnav ul{
+            float: left;
+            width: 95%;
+            height: 100%;
+            list-style: none;
+            line-height: 35px;
+        }
+        .firstnav ul li{
+            float: left;
+            width: 70px;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .tab{
+            border-style: solid;
+            border-width: 0px 1px 1px 1px;
+            border-color: red;
+            cursor: pointer;
+        }
+        .icon-guanbi{
+            font-size: 12px;
+            color: red;
+        }
+        .tabadd{
+            float: right;
+        }
+        .tabadd span{
+            font-size: 25px;
+            cursor: pointer;
+        }
+        .liactive{
+            border-style: solid;
+            border-width: 0px 1px 0px 1px;
+            border-color: red;
+            cursor: pointer;
+        }
+        .sec{
+            display: none;
+        }
+        .conactive{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h4>动态添加标签页</h4>
+    <div class="tabsbox" id="tab">
+<!--        tab 标签-->
+        <nav class="firstnav">
+            <ul>
+                <li class="tab liactive"><span>测试1</span><span class="iconfont icon-guanbi"></span></li>
+                <li class="tab"><span>测试2</span><span class="iconfont icon-guanbi"></span></li>
+                <li class="tab"><span>测试3</span><span class="iconfont icon-guanbi"></span></li>
+            </ul>
+            <div class="tabadd">
+                <span>+</span>
+            </div>
+        </nav>
+<!--        tab内容-->
+        <div class="tabscon">
+            <section class="sec conactive">测试1</section>
+            <section class="sec">测试2</section>
+            <section class="sec">测试3</section>
+        </div>
+    </div>
+
+</body>
+ <script src="tab.js"></script>
+</html>
+
+<!--添加类 这里是先设置一个共同的类 多设置一个类使点击时改变的类-->
+<!--js  清除时设置大家公有的类 留下一个类 （总感觉有点怪 看是否改进）-->
