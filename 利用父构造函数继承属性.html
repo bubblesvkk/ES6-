@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 父构造函数
+        function Father(uname,age){
+            // this 指向父构造函数的对象实例
+            this.uname = uname;
+            this.age = age;
+        }
+
+        // 子构造函数
+        function Son(uname,age){
+             // this 指向子构造函数的对象实例
+
+
+            //  这里的this是指的是子构造函数的实例 
+            // 相当于变成了是子构造函数在调用父构造函数
+            Father.call(this,uname,age)
+        }
+        var son = new Son('嘻嘻哈哈',18);
+        console.log(son);
+    </script>
+</body>
+</html>
